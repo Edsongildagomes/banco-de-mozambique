@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-MZ">
 <head>
@@ -10,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
 
     <!-- Meta Pixel Code -->
 <script>
@@ -30,28 +28,114 @@ src="https://www.facebook.com/tr?id=1230243798942563&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
     
-      <!-- Facebook Pixel Code -->
-    <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        
-        // Substitua 'YOUR_PIXEL_ID' pelo seu ID do Facebook Pixel
-        fbq('init', '1148570223701664');
-        fbq('track', 'PageView');
-    </script>
-    <noscript>
-        <img height="1" width="1" style="display:none"
-             src="https://www.facebook.com/tr?id=1148570223701664&ev=PageView&noscript=1"/>
-    </noscript>
-    <!-- End Facebook Pixel Code -->
-    
-    <link rel="stylesheet" href="css/styles.css">
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1148570223701664');
+fbq('track', 'PageView');
+</script>
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1148570223701664&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code -->
+
+<link rel="stylesheet" href="css/styles.css">
+
+<style>
+/* Botão de ativar som central */
+.unmute-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 18px 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    animation: pulse 1.6s infinite;
+}
+.unmute-overlay:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+.vsl-wrapper {
+    position: relative;
+    padding-top: 56.21%;
+}
+.vsl-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+@keyframes pulse {
+    0% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.08); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+/* 🔲 Camada preta quando o vídeo termina */
+.video-overlay {
+    display: none;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: black;
+    z-index: 3;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* 🔁 Botão de ver novamente */
+.replay-button {
+    background: #c8102e;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 16px 40px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.replay-button:hover {
+    background: #a00d24;
+}
+
+/* 💰 Botão de resgatar fundos */
+#resgatarBtn {
+    display: none;
+    margin-top: 75px;
+    background: #1a8917;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 18px 45px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#resgatarBtn:hover {
+    background: #166c13;
+}
+</style>
+
 </head>
 <body>
     <!-- Header principal -->
@@ -97,8 +181,32 @@ src="https://www.facebook.com/tr?id=1230243798942563&ev=PageView&noscript=1"
                 <div class="card vsl-card">
                     <h1 class="vsl-title">Porta voz do Governo esclarece como receber fundos do PNAF:</h1>
                     
-<!-- Container de vídeo -->
-<vturb-smartplayer id="vid-6909b8c516d4110b61c5a078" style="display: block; margin: 0 auto; width: 100%; "></vturb-smartplayer> <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/d4c68cc0-9cb1-47cd-bac5-4bd835a2910c/players/6909b8c516d4110b61c5a078/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
+                    <!-- VSL do Vimeo -->
+                    <div class="vsl-wrapper">
+                        <iframe 
+                            id="vimeoPlayer"
+                            src="https://player.vimeo.com/video/1134734351?autoplay=1&muted=1&controls=0&playsinline=1&background=0"
+                            frameborder="0" 
+                            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin" 
+                            title="banco-de-moçambique">
+                        </iframe>
+
+                        <!-- Botão de ativar som -->
+                        <button id="unmuteButton" class="unmute-overlay">🔊 Ativar Som</button>
+
+                        <!-- Camada preta ao terminar -->
+                        <div id="videoOverlay" class="video-overlay">
+                            <button id="replayButton" class="replay-button">Ver novamente</button>
+                        </div>
+                    </div>
+
+                    <!-- Botão de Resgatar Fundos -->
+                    <div style="text-align:center;">
+                        <button id="resgatarBtn" onclick="window.location.href='checkout.html'">💰 Resgatar Fundos</button>
+                    </div>
+
+                </div>
             </section>
         </div>
     </main>
@@ -130,10 +238,48 @@ src="https://www.facebook.com/tr?id=1230243798942563&ev=PageView&noscript=1"
             </div>
         </div>
     </footer>
-    
-    <script src="js/vsl.js"></script>
+
+    <!-- Script principal -->
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const iframe = document.getElementById('vimeoPlayer');
+        const player = new Vimeo.Player(iframe);
+        const unmuteBtn = document.getElementById('unmuteButton');
+        const overlay = document.getElementById('videoOverlay');
+        const replayBtn = document.getElementById('replayButton');
+        const resgatarBtn = document.getElementById('resgatarBtn');
+
+        // Ativar som
+        unmuteBtn.addEventListener('click', async () => {
+            unmuteBtn.style.opacity = '0';
+            unmuteBtn.style.pointerEvents = 'none';
+            setTimeout(() => unmuteBtn.style.display = 'none', 400);
+            try {
+                await player.setMuted(false);
+                await player.play();
+            } catch (e) { console.error('Erro ao ativar som:', e); }
+        });
+
+        // Mostrar botão "Resgatar Fundos" após 2min25s
+        setTimeout(() => {
+            resgatarBtn.style.display = 'inline-block';
+        }, 145000);
+
+        // Quando o vídeo termina, mostrar camada preta
+        player.on('ended', () => {
+            overlay.style.display = 'flex';
+        });
+
+        // Repetir o vídeo
+        replayBtn.addEventListener('click', async () => {
+            overlay.style.display = 'none';
+            try {
+                await player.setCurrentTime(0);
+                await player.play();
+            } catch (e) { console.error('Erro ao repetir vídeo:', e); }
+        });
+    });
+    </script>
 </body>
 </html>
-
-
-
